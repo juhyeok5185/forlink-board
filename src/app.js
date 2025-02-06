@@ -18,7 +18,7 @@ redisClient.on("error", (err) => console.error("❌ Redis 연결 오류:", err))
 })();
 
 // 라우터 등록
-const boardRoutes = require("./routes/boardRoutes");
+const boardRoutes = require("./board/boardRoutes");
 app.use("/board", boardRoutes);
 
 module.exports = app;
