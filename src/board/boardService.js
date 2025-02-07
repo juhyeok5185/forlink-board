@@ -1,6 +1,6 @@
 const boardRepository = require("./boardRepository");
 
-exports.createBoard = async (title, content) => {
+exports.save = async (title, content) => {
     return await boardRepository.save(title, content);
 };
 

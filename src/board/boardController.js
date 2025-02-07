@@ -1,14 +1,14 @@
 const boardService = require("./boardService");
 const ApiResponse = require("../response/ApiResponse");
 
-exports.saveBoard = async (req, res) => {
+exports.save = async (req, res) => {
     try {
         const { title, content } = req.body;
         if (!title || !content) {
             return res.status(400).json(ApiResponse.failure("제목과 내용을 입력하세요.", 400));
         }
 
-        const result = await boardService.saveBoard(title, content);
+        const result = await boardService.save(title, content);
         res.json(ApiResponse.success(result));
     } catch (error) {
         console.error("게시글 저장 오류:", error);
